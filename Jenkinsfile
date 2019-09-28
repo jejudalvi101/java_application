@@ -9,6 +9,16 @@ pipeline {
                     ls -lah
                 '''
             }
+            
+        stage('TEst') {
+            steps {
+                sh 'mvn package'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
+            }            
+            
     }
 }
 }
