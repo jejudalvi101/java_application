@@ -1,21 +1,19 @@
-pipeline { 
+pipeline {
     agent any 
     stages {
         stage('Build') { 
-            steps { 
-                sh 'mvn package' 
+            steps {
+                sh 'echo build'
             }
         }
-        stage('Test'){
+        stage('Test') { 
             steps {
-                sh 'mvn test'
-             
+                sh 'echo test'
             }
         }
-        stage('code coverage with sonar ') {
+        stage('Deploy') { 
             steps {
-                sh 'mvn install'
-                sh 'mvn org.sonarsource.scanner.maven:sonar'
+                 sh 'echo Deploy'
             }
         }
     }
